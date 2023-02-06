@@ -8,7 +8,7 @@ void main() {
       ind.add(i);
     }
   }
-  print(ind);
+
 
   List<num> numbers = [];
   int q = 0;
@@ -18,7 +18,7 @@ void main() {
   }
   // numbers.add(txt.substring(q),);
   numbers.add(num.parse(txt.substring(ind.last+1)));
-  print(numbers);
+print(numbers);
 
   for(int i=0;i<ind.length;i++){
     if(txt[ind[i]]=='*'){
@@ -27,7 +27,34 @@ void main() {
      ind.removeAt(i);
      i--;
     }
+      else if(txt[ind[i]]=='/'){
+     numbers[i]=numbers[i]/numbers[i+1];
+     numbers.removeAt(i+1);
+     ind.removeAt(i);
+     i--;
+    }
+
+  }
+
+  print(numbers);
+    
+
+      for(int i=0;i<ind.length;i++){
+    if(txt[ind[i]]=='+'){
+     numbers[i]=numbers[i]+numbers[i+1];
+     numbers.removeAt(i+1);
+     ind.removeAt(i);
+     i--;
+    }
+
+     else if(txt[ind[i]]=='-'){
+     numbers[i]=numbers[i]-numbers[i+1];
+     numbers.removeAt(i+1);
+     ind.removeAt(i);
+     i--;
+    }
   }
   print(numbers);
+
   
 }
