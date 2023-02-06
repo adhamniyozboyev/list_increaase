@@ -3,8 +3,11 @@ void main(){
   String exp='/*-+';
  List<int>ind=[];
  for (int i=0;i<txt.length;i++){
-  if(txt[i]=='*'||txt[i]=='-'||txt[i]=='+'||txt[i]=='/');
+  // if(txt[i]=='*'||txt[i]=='-'||txt[i]=='+'||txt[i]=='/');
+  if(exp.contains(txt[i])){
+
   ind.add(i);
+  }
  }
  print(ind);
 }
